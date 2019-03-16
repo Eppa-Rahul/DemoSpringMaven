@@ -11,4 +11,5 @@ public interface ClientDAO {
 	public ClientTO getRowDetails(Integer custId);
 	public List<ClientTO>  getRowsDetails(String clientName);
 	public void insertUsingProcedure(ClientTO clientTO);
+	public List<ClientTO> getBulkRowsDetails(String clientStreet);
 }

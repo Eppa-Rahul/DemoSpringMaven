@@ -12,6 +12,8 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 
 import com.smd1.entity.ClientTO;
+import com.smd1.entity.ClientTO_Smpl_2;
+
 
 
 public class ClientDAOImpl implements ClientDAO {
@@ -79,7 +81,7 @@ public class ClientDAOImpl implements ClientDAO {
 				String clientLND = resultSet.getString("CLIENT_LNDMRK");
 				String clientLOC = resultSet.getString("CLIENT_LOCALITY");
 				
-				ClientTO client = new ClientTO( clientName,  clientHNO,  clientLND,  clientLOC,  clientStreet);
+				ClientTO client = new ClientTO_Smpl_2( clientName,  clientHNO,  clientLND,  clientLOC,  clientStreet);
 				return client;
 			}
 		};
@@ -107,7 +109,7 @@ public class ClientDAOImpl implements ClientDAO {
 					String clientStreet = resultSet.getString("CLIENT_STREET");
 					String clientLND = resultSet.getString("CLIENT_LNDMRK");
 					String clientLOC = resultSet.getString("CLIENT_LOCALITY");					
-					ClientTO client= new ClientTO( clientName,  clientHNO,  clientLND,  clientLOC,  clientStreet);
+					ClientTO client= new ClientTO_Smpl_2( clientName,  clientHNO,  clientLND,  clientLOC,  clientStreet);
 					System.out.println("     "+client);
 					clientList.add(client);
 					System.out.println("        "+clientList);
@@ -122,6 +124,12 @@ public class ClientDAOImpl implements ClientDAO {
 			
 		}
 		return clientsFound;
+	}
+
+	@Override
+	public List<ClientTO> getBulkRowsDetails(String clientStreet) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 
